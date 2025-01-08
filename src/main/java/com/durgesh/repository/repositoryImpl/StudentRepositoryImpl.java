@@ -20,20 +20,19 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public void save(Student student) {
-//        String sql = "INSERT INTO Students (first_name, last_name, email, date_of_birth, enrollment_date) VALUES (?, ?, ?, ?, ?)";
-       jdbcTemplate.update(SqlConstantQuery.insertRecord, student.getFirstName(), student.getLastName(), student.getEmail(), student.getDateOfBirth(), student.getEnrollmentDate());
+//        String sql = "INSERT INTO Students (first_name, last_name, email, date_of_birth, enrollment_date) VALUES (?, ?, ?, ?, ?)";jdbcTemplate.update(SqlConstantQuery.INSERTRECORD, student.getFirstName(), student.getLastName(), student.getEmail(), student.getDateOfBirth(), student.getEnrollmentDate());
     }
 
     @Override
     public void update(Student student) {
 //        String sql = "UPDATE Students SET first_name = ?, last_name = ?, email = ?, date_of_birth = ?, enrollment_date = ? WHERE student_id = ?";
-        jdbcTemplate.update(SqlConstantQuery.updateQuery, student.getFirstName(), student.getLastName(), student.getEmail(), student.getDateOfBirth(), student.getEnrollmentDate(), student.getStudentId());
+        jdbcTemplate.update(SqlConstantQuery.UPDATERECORD, student.getFirstName(), student.getLastName(), student.getEmail(), student.getDateOfBirth(), student.getEnrollmentDate(), student.getStudentId());
     }
 
     @Override
     public void delete(int studentId) {
-        String sql = "DELETE FROM Students WHERE student_id = ?";
-        jdbcTemplate.update(sql, studentId);
+//        String sql = "DELETE FROM Students WHERE student_id = ?";
+        jdbcTemplate.update(SqlConstantQuery.DELETE, studentId);
     }
 
     @Override
