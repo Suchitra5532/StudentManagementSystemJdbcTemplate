@@ -26,8 +26,8 @@ public class StudentRepositoryImpl implements StudentRepository {
 
     @Override
     public void update(Student student) {
-        String sql = "UPDATE Students SET first_name = ?, last_name = ?, email = ?, date_of_birth = ?, enrollment_date = ? WHERE student_id = ?";
-        jdbcTemplate.update(sql, student.getFirstName(), student.getLastName(), student.getEmail(), student.getDateOfBirth(), student.getEnrollmentDate(), student.getStudentId());
+//        String sql = "UPDATE Students SET first_name = ?, last_name = ?, email = ?, date_of_birth = ?, enrollment_date = ? WHERE student_id = ?";
+        jdbcTemplate.update(SqlConstantQuery.updateQuery, student.getFirstName(), student.getLastName(), student.getEmail(), student.getDateOfBirth(), student.getEnrollmentDate(), student.getStudentId());
     }
 
     @Override
