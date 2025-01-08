@@ -1,0 +1,18 @@
+Explanation of Key Properties:
+Database Connection:
+
+spring.datasource.url: The URL for connecting to your MySQL database. Replace your_database_name, your_database_username, and your_database_password with your actual database details.
+useSSL=false: Disables SSL for simplicity in development.
+serverTimezone=UTC: Ensures consistent timezone handling.
+Connection Pool (HikariCP):
+
+spring.datasource.hikari.maximum-pool-size: Maximum number of database connections in the pool.
+spring.datasource.hikari.minimum-idle: Minimum number of idle connections in the pool.
+spring.datasource.hikari.idle-timeout: Time (in milliseconds) before an idle connection is removed.
+spring.datasource.hikari.max-lifetime: Maximum lifetime of a connection in the pool.
+SQL Logging:
+
+Enables logging of SQL statements executed by JdbcTemplate for debugging purposes.
+JPA Settings (Optional):
+
+If you plan to use JPA in addition to JdbcTemplate, uncomment the JPA-related properties for configuring Hibernate.
